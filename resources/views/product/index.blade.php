@@ -76,14 +76,7 @@
                 <div class="card-header">
                   <h4>List Product</h4>
                   <div class="card-header-action">
-                    <form>
-                        <div class="input-group">
-                          <input type="text" class="form-control" placeholder="Search">
-                          <div class="input-group-btn">
-                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                          </div>
-                        </div>
-                      </form>
+                    <a href="#" class="btn btn-primary">Add Product</a>
                   </div>
                 </div>
                 <div class="card-body p-0">
@@ -104,7 +97,7 @@
                         <td class="font-weight-600"> {{ $product->name }} </td>
                         <td class="font-weight-600"> {{ number_format($product->price) }} </td>
                         <td class="font-weight-600"> {{ number_format($product->total_stock) }} </td>
-                        <td class="font-weight-600"> {{ $product->name }} </td>
+                        <td class="font-weight-600"> {{ $product->user->name }} </td>
                         <td class="font-weight-600"> {{ $product->created_at->diffForHumans() }} </td>
                         <td class="font-weight-600"> 
                             <div class='d-inline-flex'>
@@ -122,8 +115,8 @@
                       <tr>
                     </tbody></table>
                   </div>
+{{-- 
                   <div class="card">
- 
                     <div class="card-body">
                         <ul class="pagination">
                             <li class="page-item">{{$products->links()}}</li>
@@ -131,8 +124,8 @@
                         </ul>
                       </nav>
                   </div>
-  
                 </div>
+                 --}}
               </div>
             </div>
 

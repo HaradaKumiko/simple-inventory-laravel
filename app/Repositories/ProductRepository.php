@@ -8,7 +8,8 @@ class ProductRepository
 {
     public function getAll()
     {
-        return Product::orderBy('total_stock', 'desc')->simplePaginate(5);
+        $data = Product::orderBy('total_stock', 'desc')->with(['user'])->get();
+        return $data;
     }
     
     public function countAll()
