@@ -2,13 +2,16 @@
 namespace App\Services;
 
 use App\Repositories\ProductRepository;
+use App\Repositories\ProductHistoryRepository;
 
 class ProductService{
     protected $productRepository;
+    protected $productHistoryRepository;
 
-    public function __construct(ProductRepository $productRepository)
+    public function __construct(ProductRepository $productRepository, ProductHistoryRepository $productHistoryRepository)
     {
         $this->productRepository = $productRepository;
+        $this->productHistoryRepository = $productHistoryRepository;
     }
 
     public function findAllProductService()
@@ -24,6 +27,16 @@ class ProductService{
     public function countAllStockProductService()
     {
         return $this->productRepository->countAllStockProduct();
+    }
+
+    public function countAllStockProductIncomingService()
+    {
+        return $this->productHistoryRepository->countAllStockIncomingProduct();
+    }
+
+    public function countAllStockProductOutgoingService()
+    {
+        return $this->productHistoryRepository->countAllStockOutgoingProduct();
     }
 
 

@@ -19,6 +19,8 @@ class ProductController extends Controller
         $products = $this->productService->findAllProductService();
         $totalProduct = $this->productService->countAllProductService();
         $totalStock = $this->productService->countAllStockProductService();
-        return view('product.index', compact('products', 'totalProduct', 'totalStock'));
+        $totalIncomingStock = $this->productService->countAllStockProductIncomingService();
+        $totalOutgoingStock = $this->productService->countAllStockProductOutgoingService();
+        return view('product.index', compact('products', 'totalProduct', 'totalStock', 'totalIncomingStock', 'totalOutgoingStock'));
     }
 }

@@ -27,5 +27,4 @@ class ProductRepository
 
         return $data ?? 0;
     }
-
 }
