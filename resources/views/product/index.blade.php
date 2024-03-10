@@ -37,8 +37,8 @@
          <div class="row">
               <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
-                  <div class="card-icon bg-primary">
-                    <i class="fas fa-box"></i>
+                  <div class="card-icon bg-success">
+                    <i class="fas fa-plus"></i>
                   </div>
                   <div class="card-wrap">
                     <div class="card-header">
@@ -53,8 +53,8 @@
 
               <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
-                  <div class="card-icon bg-primary">
-                    <i class="fas fa-box"></i>
+                  <div class="card-icon bg-danger">
+                    <i class="fas fa-minus"></i>
                   </div>
                   <div class="card-wrap">
                     <div class="card-header">
@@ -115,8 +115,8 @@
                     <table class="table table-striped">
                       <tbody><tr>
                         <th>Product ID</th>
+                        <th>Product Name</th>
                         <th>Product Price</th>
-                        <th>Product Produk</th>
                         <th>Total Stock</th>
                         <th>Added By</th>
                         <th>Date</th>

@@ -3,6 +3,7 @@ namespace App\Services;
 
 use App\Repositories\ProductRepository;
 use App\Repositories\ProductHistoryRepository;
+use App\Http\Requests\CreateProductRequest;
 
 class ProductService{
     protected $productRepository;
@@ -17,6 +18,11 @@ class ProductService{
     public function findAllProductService()
     {
         return $this->productRepository->getAll();
+    }
+
+    public function createProductService(CreateProductRequest $createProductRequest)
+    {
+        return $this->productRepository->create($createProductRequest);
     }
 
     public function countAllProductService()
