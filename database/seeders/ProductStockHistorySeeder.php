@@ -17,14 +17,6 @@ class ProductStockHistorySeeder extends Seeder
         DB::table('product_stock_histories')->insert([
             [
                 'product_stock_history_id' => Str::uuid(),
-                'product_id' => "7d2f2e73-9f5b-49fe-b42b-afe3bde21779",
-                'user_id' => "ce9e7c1c-7756-4696-9ed0-2c1c512be8eb",
-                'stock' => 470,
-                'type' => 'incoming',
-                'created_at' => Carbon::now()
-            ],
-            [
-                'product_stock_history_id' => Str::uuid(),
                 'product_id' => "a6ad6a6c-fc57-4e5f-9c35-7e3d621387c4",
                 'user_id' => "ce9e7c1c-7756-4696-9ed0-2c1c512be8eb",
                 'stock' => 265,
@@ -43,8 +35,40 @@ class ProductStockHistorySeeder extends Seeder
                 'product_stock_history_id' => Str::uuid(),
                 'product_id' => "7d2f2e73-9f5b-49fe-b42b-afe3bde21779",
                 'user_id' => "ce9e7c1c-7756-4696-9ed0-2c1c512be8eb",
+                'stock' => 470,
+                'type' => 'incoming',
+                'created_at' => '2024-01-11 05:06:17'
+            ], 
+            [
+                'product_stock_history_id' => Str::uuid(),
+                'product_id' => "7d2f2e73-9f5b-49fe-b42b-afe3bde21779",
+                'user_id' => "ce9e7c1c-7756-4696-9ed0-2c1c512be8eb",
                 'stock' => 70,
                 'type' => 'outgoing',
+                'created_at' => '2024-02-11 05:06:17'
+            ],
+            [
+                'product_stock_history_id' => Str::uuid(),
+                'product_id' => "7d2f2e73-9f5b-49fe-b42b-afe3bde21779",
+                'user_id' => "ce9e7c1c-7756-4696-9ed0-2c1c512be8eb",
+                'stock' => 100,
+                'type' => 'incoming',
+                'created_at' => Carbon::now()
+            ],
+            [
+                'product_stock_history_id' => Str::uuid(),
+                'product_id' => "7d2f2e73-9f5b-49fe-b42b-afe3bde21779",
+                'user_id' => "ce9e7c1c-7756-4696-9ed0-2c1c512be8eb",
+                'stock' => 10,
+                'type' => 'outgoing',
+                'created_at' => '2024-02-11 05:06:17'
+            ],
+            [
+                'product_stock_history_id' => Str::uuid(),
+                'product_id' => "7d2f2e73-9f5b-49fe-b42b-afe3bde21779",
+                'user_id' => "ce9e7c1c-7756-4696-9ed0-2c1c512be8eb",
+                'stock' => 432,
+                'type' => 'incoming',
                 'created_at' => Carbon::now()
             ],   
     ]);

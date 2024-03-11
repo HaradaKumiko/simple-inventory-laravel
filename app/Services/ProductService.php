@@ -4,6 +4,7 @@ namespace App\Services;
 use App\Repositories\ProductRepository;
 use App\Repositories\ProductHistoryRepository;
 use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\EditProductRequest;
 
 class ProductService{
     protected $productRepository;
@@ -20,10 +21,34 @@ class ProductService{
         return $this->productRepository->getAll();
     }
 
-    public function createProductService(CreateProductRequest $createProductRequest)
+    public function createProductService(array $createProductRequest)
     {
         return $this->productRepository->create($createProductRequest);
     }
+
+
+    public function findProductByIdService(string $product_id)
+    {
+        return $this->productRepository->find($product_id);
+    }
+
+    public function findAllHistoryProductByIdService(string $product_id)
+    {
+        return $this->productHistoryRepository->findAsc($product_id);
+    }
+
+    public function editProductService(array $editProductRequest, string $product_id)
+    {
+        $this->productRepository->find($product_id);
+        return $this->productRepository->update($editProductRequest, $product_id);
+    }
+
+    public function deleteProductByIdService(string $product_id)
+    {
+        return $this->productRepository->delete($product_id);
+    }
+
+
 
     public function countAllProductService()
     {

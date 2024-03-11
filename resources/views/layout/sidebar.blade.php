@@ -4,7 +4,7 @@
         {{-- <a href="/"> <img src="{{ Storage::url(config('web_config')['WEB_LOGO']) }}" alt="Logo" width="200" class="img-fluid"> </a> --}}
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="/">inventory</a>
+        <a href="{{route('products.index')}}">IA</a>
       </div>
       <ul class="sidebar-menu">
         <li class="{{ (Request::segment(1) == 'product') ? 'active' : '' }}"><a class="nav-link" href=""><i class="fas fa-box"></i><span>Produk</span></a></li>

@@ -2,6 +2,7 @@
 namespace App\Repositories;
 
 use App\Models\Product;
+use App\Models\ProductStockHistory;
 use Illuminate\Support\Facades\DB;
 
 class ProductHistoryRepository
@@ -29,5 +30,17 @@ class ProductHistoryRepository
         $data = $data->stock;
 
         return $data ?? 0;
+    }
+
+    public function findDesc(string $product_id)
+    {
+        $data = ProductStockHistory::where('product_id', $product_id)->orderBy('created_at', 'desc')->get();
+        return $data;
+    }
+
+    public function findAsc(string $product_id)
+    {
+        $data = ProductStockHistory::where('product_id', $product_id)->orderBy('created_at', 'asc')->get();
+        return $data;
     }
 }

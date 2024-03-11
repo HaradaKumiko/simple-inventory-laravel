@@ -107,7 +107,7 @@
                 <div class="card-header">
                   <h4>List Product</h4>
                   <div class="card-header-action">
-                    <a href="#" class="btn btn-primary">Add Product</a>
+                    <a href="{{ route('products.create') }}" class="btn btn-primary">Add Product</a>
                   </div>
                 </div>
                 <div class="card-body p-0">
@@ -132,11 +132,12 @@
                         <td class="font-weight-600"> {{ $product->created_at->diffForHumans() }} </td>
                         <td class="font-weight-600"> 
                             <div class='d-inline-flex'>
-                                <a href="" class='btn btn-icon icon-left btn-warning btn-sm mr-2'><i class="fas fa-edit"></i>Edit</a>
-                                <form action="" method="post">
+                              <a href="{{ route('products.view', ['product_id' => $product->product_id]) }}" class='btn btn-icon icon-left btn-info btn-sm mr-2'><i class="fas fa-eye"></i>View</a>
+                                <a href="{{ route('products.edit', ['product_id' => $product->product_id]) }}" class='btn btn-icon icon-left btn-warning btn-sm mr-2'><i class="fas fa-edit"></i>Edit</a>
+                                <form action="{{ route('products.delete', ['product_id' => $product->product_id]) }}" method="post">
                                    @csrf
                                    @method('delete')
-                                   <button type="button" class='btn btn-icon icon-left btn-danger btn-sm btn-delete'><i class="fas fa-trash"></i>Delete</button>
+                                   <button type="submit" class='btn btn-icon icon-left btn-danger btn-sm btn-delete'><i class="fas fa-trash"></i>Delete</button>
                                 </form>
                              </div>    
                         </td>
@@ -146,6 +147,7 @@
                       <tr>
                     </tbody></table>
                   </div>
+                </div>
 {{-- 
                   <div class="card">
                     <div class="card-body">
@@ -161,7 +163,7 @@
             </div>
 
  
-</div>
+    </div>
 </section>
 
 
