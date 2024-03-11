@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('avatar');
+            $table->string('avatar')->nullable()->default('https://i.pinimg.com/564x/7a/9c/c3/7a9cc36f478969da92e2e9fee391a5b2.jpg');
             $table->rememberToken();
             $table->timestamps();
         });
