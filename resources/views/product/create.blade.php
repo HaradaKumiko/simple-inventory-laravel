@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title' , 'Tambah Blog')
+@section('title' , 'Add Product')
 @section('content')
     <div class="main-content">
       <section class="section">
@@ -16,7 +16,7 @@
         <div class="card-header">
           <h4>Add Product</h4>
         </div>
-        <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data"> 
+        <form action="{{ route('products.store') }}" method="POST"> 
           @csrf
         <div class="card-body">
 

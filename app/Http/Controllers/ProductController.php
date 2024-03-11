@@ -6,6 +6,7 @@ use App\Services\ProductService;
 use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\EditProductRequest;
 use App\Services\ProductHistoryService;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ValidatedInput;
 
 class ProductController extends Controller
@@ -38,7 +39,8 @@ class ProductController extends Controller
     public function storeProductController(CreateProductRequest $createProductRequest) 
     {
         $validatedData = $createProductRequest->validated();
-        $product = $this->productService->createProductService($validatedData);
+        $user_id = Auth::user()->user_id;
+        $product = $this->productService->createProductService($validatedData, $user_id);
 
         session()->flash('success', "Success Create New Product");
         return redirect()->route('products.index')->with([

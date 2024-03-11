@@ -133,12 +133,14 @@
                         <td class="font-weight-600"> 
                             <div class='d-inline-flex'>
                               <a href="{{ route('products.view', ['product_id' => $product->product_id]) }}" class='btn btn-icon icon-left btn-info btn-sm mr-2'><i class="fas fa-eye"></i>View</a>
-                                <a href="{{ route('products.edit', ['product_id' => $product->product_id]) }}" class='btn btn-icon icon-left btn-warning btn-sm mr-2'><i class="fas fa-edit"></i>Edit</a>
+                              @if ($product->ownership()) 
+                              <a href="{{ route('products.edit', ['product_id' => $product->product_id]) }}" class='btn btn-icon icon-left btn-warning btn-sm mr-2'><i class="fas fa-edit"></i>Edit</a>
                                 <form action="{{ route('products.delete', ['product_id' => $product->product_id]) }}" method="post">
                                    @csrf
                                    @method('delete')
                                    <button type="submit" class='btn btn-icon icon-left btn-danger btn-sm btn-delete'><i class="fas fa-trash"></i>Delete</button>
                                 </form>
+                                @endif
                              </div>    
                         </td>
 

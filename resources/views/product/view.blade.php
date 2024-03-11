@@ -61,7 +61,7 @@
             <div class="card-header">
               <h4>List History Product</h4>
               <div class="card-header-action">
-                <a href="{{ route('products.create') }}" class="btn btn-primary">Add Stock Product</a>
+                <a href="{{ route('products.history.create', ['product_id' => $product->product_id]) }}" class="btn btn-primary">Add Stock Product</a>
               </div>
             </div>
             <div class="card-body p-0">

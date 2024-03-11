@@ -21,9 +21,9 @@ class ProductService{
         return $this->productRepository->getAll();
     }
 
-    public function createProductService(array $createProductRequest)
+    public function createProductService(array $createProductRequest, string $user_id)
     {
-        return $this->productRepository->create($createProductRequest);
+        return $this->productRepository->create($createProductRequest, $user_id);
     }
 
 

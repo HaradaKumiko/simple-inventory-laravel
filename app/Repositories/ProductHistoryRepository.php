@@ -1,9 +1,9 @@
 <?php
 namespace App\Repositories;
 
-use App\Models\Product;
 use App\Models\ProductStockHistory;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ProductHistoryRepository
 {
@@ -43,4 +43,18 @@ class ProductHistoryRepository
         $data = ProductStockHistory::where('product_id', $product_id)->orderBy('created_at', 'asc')->get();
         return $data;
     }
+
+    public function create(array $createHistoryProductRequest, string $user_id)
+    {
+        $data = new ProductStockHistory;
+        $data->product_stock_history_id = Str::uuid();
+        $data->user_id = $user_id;
+        $data->product_id = $createHistoryProductRequest['product_id'];
+        $data->type =  $createHistoryProductRequest['type'];
+        $data->stock = $createHistoryProductRequest['stock'];
+        $data->save();
+
+        return $data;
+    }
+
 }
