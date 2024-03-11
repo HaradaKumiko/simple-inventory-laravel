@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Monitor Gaming',
                 'price' => 3_500_000,
                 'total_stock' => 922,
-                'created_at' => Carbon::now()
+                'created_at' => "2024-01-11 05:06:17"
             ],
             [
                 'product_id' => "a6ad6a6c-fc57-4e5f-9c35-7e3d621387c4",

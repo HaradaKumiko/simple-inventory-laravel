@@ -78,7 +78,13 @@
                   <tr>
                     @foreach ($histories as $history)
                     <td class="font-weight-600"> {{ $history->product_stock_history_id }} </td>
-                    <td class="font-weight-600"> {{ $history->type }} </td>
+                    <td class="font-weight-600">
+                      @if($history->type === 'incoming')
+                          <span class="badge badge-success"> {{ $history->type }} </span>
+                      @else
+                          <span class="badge badge-danger"> {{ $history->type }} </span>
+                      @endif
+                  </td>
                     <td class="font-weight-600"> {{ $history->stock }} </td>
                     <td class="font-weight-600"> {{ $product->user->name }} </td>
                     <td class="font-weight-600"> {{ $history->created_at->diffForHumans() }} </td>
